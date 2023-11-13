@@ -1,0 +1,120 @@
+Alex: Hello
+Alex: Where all?
+Alex: hey!
+Egor: hello
+Egor: i am here
+qwer: qwe
+qwer: qwe
+alex: ghds
+alex: asdsdasd
+egor: asd
+2: asa
+2: A
+1: SA
+1: A
+Alex: Hello
+Egor: Hi
+Alex: where
+1: wdqdqwd
+1: wqdqwd
+1: w
+1: dqwdqw
+1: d
+1: qw
+1: dw
+1: d
+1: qwd
+1: qw
+1: dqw
+1: d
+1: qwd
+1: qw
+1: dqw
+1: d
+1: qwd
+1: wqd
+1: qw
+1: dqw
+1: dqw
+1: d
+1: sad
+1: asd
+Alexis: Hello
+Tom: Hi
+Alexis: sdf
+Dmitry: Hello
+Harry: Disconnect
+Harry: пробую
+Harry: не работает сцуко
+123: через esc тоже код не подходит((
+VK_END: qwed
+work: qwd
+VK_END: 111
+VK_END: not work scuka
+run: sqswq
+run: w
+1: wed
+1: dwed
+1: ed
+qwed: wdq
+qwed: wd
+wdq: wd
+wdq: dw
+qwed: wdwwe
+qwe: w
+qwe: wqw
+qwe: efded
+qw: wd
+wdq: dqewd
+wdq: dede 
+wqd: wdq
+wqd: qwd
+wqd: ce
+wqd: dqw
+wqd: wqd
+wqd: saddad
+sqd: dqwd
+sqd: dq
+sqd: ed
+qwd: s
+qwd: sqs
+qwd: w1q
+wdwd: dwq
+wdwd: rf
+wedfe: dwed
+dq: dw
+123: hello
+234: hi
+123: sfg
+234: gn
+Override: я тупил
+Override: по страшному
+worked: и все равно не работает
+dsad: ad
+qwd: dqw
+qwd: qd
+aSD: SS
+qws: s
+Alex: сцуко, заработало...
+Egor: точно работает?
+Alex: ну да, че не по глазам?)
+Al: жесть намутил
+Eg: а вот и криво работает!))
+1: Осталось решить вопрос с видимостью названия кнопок сервера при его активности
+2: ага
+2: удачи))
+Alex: да вот хрен, названия кнопок все равно не видно
+Egor: реально задолбался
+Alex: ага
+Alex: Отправим как есть?
+Alex: да?
+Egor: Да, нервов уже нет))
+Client null out of server
+Client Egorka out of server
+Client 1 out of server
+Client "Eg" out of server
+Client "Eg" out of server
+Client "12" disconnect from server
+23: Мля, разобрался с кнопками...
+12: капец конечно...
+23: сдаем...
