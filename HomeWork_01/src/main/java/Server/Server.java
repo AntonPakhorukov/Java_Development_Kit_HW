@@ -73,7 +73,7 @@ public class Server extends JFrame {
         add(panBotton, BorderLayout.SOUTH);
         setVisible(true); // установка видимости окна
     }
-    public static TextArea getPanel() {
+    public TextArea getPanel() {
         return panel;
     }
     public boolean connectUser(Client client){
@@ -150,4 +150,5 @@ public class Server extends JFrame {
             panel.append("Server don't run\n");
         }
     }
+
 }

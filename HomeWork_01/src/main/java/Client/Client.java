@@ -30,7 +30,7 @@ public class Client extends JFrame {
     Server serv;
     JPanel panBottom;
     JPanel connectBottom;
-    private static boolean connected = false;
+    private boolean connected = false;
 
     public Client(Server server) {
         this.serv = server;
@@ -86,7 +86,8 @@ public class Client extends JFrame {
             if (!history.isEmpty()) {
                 chat.append(history + "\n");
             }
-            Server.getPanel().append(name.getText() + " join to server\n");
+            serv.getPanel().append(name.getText() + " join to server\n");
+//            Server.getPanel().append(name.getText() + " join to server\n");
             connected = true;
             panBottom.setVisible(false);
             connectBottom.setVisible(true);
