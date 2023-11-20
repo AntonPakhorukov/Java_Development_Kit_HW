@@ -28,19 +28,22 @@ public class Server {
         if (!isWork){
             serverView.sendMessage("Server not run!\n");
         } else {
-            isWork = false;
-            for (Client cl : listClient) {
-                disconnectUser(cl);
+//            for (Client cl : listClient) { // Не верная реализация, так как
+//                disconnectUser(cl); // отключает 2 раза одного и того же клиента
+//            }
+            for (int i = listClient.size() - 1; i >= 0; i--) {
+                disconnectUser(listClient.get(i));
             }
+            isWork = false;
             serverView.sendMessage("Server is stopped!\n");
         }
     }
     public void disconnectUser(Client client){
+        listClient.remove(client);
         if (client != null){
             client.disconnect();
             serverView.sendMessage(client.getName() + " disconnect from server\n");
         }
-        listClient.remove(client);
     }
     public boolean connectUser(Client client){
         if (isWork) {

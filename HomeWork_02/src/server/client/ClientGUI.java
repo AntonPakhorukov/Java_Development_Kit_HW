@@ -24,7 +24,7 @@ public class ClientGUI extends JFrame implements ClientView{
         client = new Client(this, server.getConnection());
         setDefaultCloseOperation(HIDE_ON_CLOSE);
         createPanel();
-
+        log.append("Enter your name, pls...\n");
         setVisible(true);
     }
 
@@ -67,6 +67,7 @@ public class ClientGUI extends JFrame implements ClientView{
         add(createHeaderPanel(), BorderLayout.NORTH);
         add(createLog());
         add(createFooter(), BorderLayout.SOUTH);
+
     }
 
     private Component createHeaderPanel(){
@@ -79,7 +80,11 @@ public class ClientGUI extends JFrame implements ClientView{
         btnLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                connectToServer();
+                if (!tfLogin.getText().isEmpty()) {
+                    connectToServer();
+                } else {
+                    log.append("For connected to server your need enter your name\n");
+                }
             }
         });
 

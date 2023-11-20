@@ -26,7 +26,7 @@ public class Client {
             }
             return true;
         } else {
-            printText("Not connected to server...\n");
+            printText("Not connected to server...");
             return false;
         }
     }
@@ -38,7 +38,7 @@ public class Client {
                 server.message(name + ": " + message);
             }
         } else {
-            printText("Нет подключения к серверу\n");
+            printText("Not connect to server...");
         }
     }
     //нам посылают
@@ -49,9 +49,9 @@ public class Client {
     public void disconnect(){
         if (connected) {
             connected = false;
-            server.disconnectUser(this);
             clientView.disconnectFromServer();
-            printText("Вы были отключены от сервера!\n");
+            server.disconnectUser(this);
+            printText("You are disconnect to server!");
         }
     }
 

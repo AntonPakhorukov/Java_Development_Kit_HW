@@ -34,7 +34,8 @@ public class ServerWindow extends JFrame implements ServerView {
     }
     private void createPanel() {
         log = new JTextArea();
-        add(log);
+        log.setEditable(false);
+        add(new JScrollPane(log));
         add(createButtons(), BorderLayout.SOUTH);
     }
 

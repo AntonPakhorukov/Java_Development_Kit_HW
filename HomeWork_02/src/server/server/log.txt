@@ -31,3 +31,7 @@ Egor: o... good good))
 Alex: ok
 2: erg
 1: er
+Egor: hi
+Alex: hello
+Alex: now all work
+Egor: yes, its true
