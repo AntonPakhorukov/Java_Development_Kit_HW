@@ -42,7 +42,7 @@ public class Main {
     /**
      * Task_02
      */
-    private static <K, V> boolean compareArrays(K[] arr1, V[] arr2){
+    private static <T1, T2> boolean compareArrays(T1[] arr1, T2[] arr2){
         if (arr1.length != arr2.length) return false;
         return (checkArrayClass(arr1) & checkArrayClass(arr2));
     }
