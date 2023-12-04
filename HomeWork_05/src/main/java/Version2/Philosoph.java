@@ -1,6 +1,10 @@
 package Version2;
 
+import java.util.Random;
+import java.util.concurrent.CountDownLatch;
+
 public class Philosoph extends Thread {
+    private CountDownLatch cdl;
     private String name;
     private int fork = 0;
     private int plate;
@@ -9,7 +13,8 @@ public class Philosoph extends Thread {
     private int countEat = 3;
     private Table table;
 
-    public Philosoph(String name, Table table) {
+    public Philosoph(String name, Table table, CountDownLatch cdl) {
+        this.cdl = cdl;
         this.name = name;
         this.table = table;
         Object monitor = Table.class;
@@ -19,13 +24,13 @@ public class Philosoph extends Thread {
     }
     @Override
     public void run() {
-        System.out.println(table.getPhilosophList().size());
-        int step= 0;
+//        System.out.println(table.getPhilosophList().size());
+        int step = 0;
         while (this.countEat > 0) {
 
             try {
 //                System.out.println("доступные вилки на начало итерации " + table.getForkMap());
-                System.out.println(name + step + ": проверка countEat > 0 -> " + countEat);
+//                System.out.println(name + step + ": проверка countEat > 0 -> " + countEat);
 //                System.out.println("Доступные тарелки " + table.getPlateMap());
                 if (!this.readyEat) {
 //                    System.out.println(name + step + " текущая готовность поесть " + readyEat);
@@ -34,10 +39,10 @@ public class Philosoph extends Thread {
 //                    System.out.println(name + step + " кушать не будет, новая готовность поесть " + readyEat);
                     continue;
                 } else {
-                    System.out.println(name + " готов поесть");
+//                    System.out.println(name + " готов поесть");
                 }
-                Thread.sleep(500);
-                System.out.println(name + step + ": sleep 500");
+//                Thread.sleep(500);
+//                System.out.println(name + step + ": sleep 500");
 //                System.out.println("Количество тарелок = " + table.getPlateMap().size());
                 for (int i = 0; i < table.getPlateMap().size(); i++) {
 //                    System.out.println(name + step + ": Проверка цикла поиска тарелки с номером: " + plate +" и "+ i);
@@ -48,9 +53,8 @@ public class Philosoph extends Thread {
                         if(checkFork(i, table)) {
                             System.out.println(name + step + " проверил наличие вилок");
                             System.out.println(name+ step +  " доступные вилки: " + table.getForkMap());
-                            synchronized (Philosoph.class){
-                                giveFork(i, table);
-                            }
+                            giveFork(i, table);
+                            Thread.sleep(new Random().nextLong(3000, 6000));
                             System.out.println(name + step + " взял вилки " + table.getForkMap());
                             this.countEat--;
                             readyEat = !readyEat;
@@ -71,7 +75,7 @@ public class Philosoph extends Thread {
                     Thread.sleep(500);
                 }
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
 
             try {
@@ -83,8 +87,10 @@ public class Philosoph extends Thread {
         }
         if (countEat == 0) {
             System.err.println(name + " eating all plate spaghetti!");
+            cdl.countDown();
             this.interrupt();
         }
+        sayEnd(cdl);
     }
     public boolean checkFork(int i, Table table) {
         return (i > 0) ? (table.getForkMap().get(i) && table.getForkMap().get(i - 1)) :
@@ -98,7 +104,9 @@ public class Philosoph extends Thread {
             table.getForkMap().put(table.getForkMap().size() - 1, false);
         }
     }
-
+    private void sayEnd(CountDownLatch cdl) {
+        if (cdl.getCount() == 5) System.out.println("\nВсе философы поели");
+    }
 
 
 //    public synchronized void checkEat() throws InterruptedException{

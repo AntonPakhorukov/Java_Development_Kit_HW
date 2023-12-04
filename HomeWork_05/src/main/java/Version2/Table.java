@@ -1,13 +1,16 @@
 package Version2;
 
 import java.util.*;
+import java.util.concurrent.CountDownLatch;
 
 public class Table {
+    private CountDownLatch cdl;
     private volatile Map<Integer, Integer> plateOfSpaghetti;
     private volatile Map<Integer, Boolean> fork;
     private List<Philosoph> philosoph;
 
-    public Table() {
+    public Table(CountDownLatch cdl) {
+        this.cdl = cdl;
         philosoph = new ArrayList<>();
         this.plateOfSpaghetti = new HashMap<>();
 //        plateOfSpaghetti.forEach((k, v) -> System.out.println("Now in plate " + k + " " + v));
